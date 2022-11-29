@@ -1,8 +1,8 @@
-name: End-to-end tests 🧪
-on: [push]  ##qualquer PUSH de qualquer branch vai disparar esse pipelinegit s
+name: End-to-end tests 
+on: [push]
 jobs:
   cypress-run:
-    runs-on: windows 10
+    runs-on: Windows 10 Enterprise
     steps:
       - name: Checkout
         uses: actions/checkout@v2
