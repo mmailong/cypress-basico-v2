@@ -1,8 +1,8 @@
-name: End-to-end tests 
+name: End-to-end tests 🧪
 on: [push]
 jobs:
   cypress-run:
-    runs-on: Windows 10 Enterprise
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
