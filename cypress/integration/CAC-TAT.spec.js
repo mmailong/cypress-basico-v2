@@ -278,6 +278,31 @@ describe('Central de Atendimento ao Cliente TAT', function() {
         
       })
 
+
+      it('Realizar uma requisição HTTP', function(){
+        cy.request('https://cac-tat.s3.eu-central-1.amazonaws.com/index.html')
+          .should(function(response){
+                console.log(response)
+                //Com o response, desestruturamos o status, statusText e body estamos fazendo as verificacoes
+                const { status, statusText, body} = response
+                expect(status).to.equal(200)
+                expect(statusText).to.equal('OK')
+                expect(body).to.include('CAC TAT')
+          })
+      })
+
+      it.only('Encontrar o gato escondido', function(){
+         cy.get('#cat')
+           .invoke('show')
+           .should('be.visible')
+
+         cy.get('#title')
+           .invoke('text', 'CAT TAT')
+        
+         cy.get('#subtitle')
+           .invoke('text', 'Eu gosto de cachorro 🐕')
+      })
+
     // it.only('Selecionar uma opção aleatória a partir de um selRegistro', function(){
     //     cy.get('#product')
     //       .its('length', {log: false}).then(num => {       
