@@ -289,6 +289,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
                 expect(statusText).to.equal('OK')
                 expect(body).to.include('CAC TAT')
           })
+      })
 
       it('Encontrar o gato escondido', function(){
          cy.get('#cat')
